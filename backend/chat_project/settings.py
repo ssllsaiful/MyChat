@@ -46,8 +46,8 @@ CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = os.environ.get(
     'CSRF_TRUSTED_ORIGINS', 
-    'https://mychat-production-2b73.up.railway.app'
-    'http://localhost:3000
+    'https://mychat-production-2b73.up.railway.app',
+    'http://localhost:3000',
 ).split(',')
 
 ROOT_URLCONF = 'chat_project.urls'
