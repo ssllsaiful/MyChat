@@ -8,8 +8,6 @@ interface User {
   username: string;
   email: string;
 }
-
-//ji
 interface AuthContextType {
   user: User | null;
   token: string | null;
