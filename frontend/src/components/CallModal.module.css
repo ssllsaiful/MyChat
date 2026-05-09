@@ -1,0 +1,306 @@
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.2s ease;
+}
+
+/* ── Incoming Call UI ── */
+.incomingCard {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-width: 300px;
+  animation: slideUp 0.3s ease;
+}
+
+.incomingAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #6366f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  animation: pulse 1.5s infinite;
+}
+
+.incomingName {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e6edf3;
+}
+
+.incomingSubtitle {
+  font-size: 0.9rem;
+  color: #8b949e;
+  margin-top: -0.5rem;
+}
+
+.incomingBtns {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.btnAccept {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #3fb950;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+}
+.btnAccept:hover { background: #2ea043; transform: scale(1.1); }
+
+.btnReject {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f85149;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+}
+.btnReject:hover { background: #da3633; transform: scale(1.1); }
+
+/* ── Active Call UI ── */
+.callContainer {
+  width: 100%;
+  max-width: 900px;
+  height: 90vh;
+  max-height: 600px;
+  background: #0d1117;
+  border-radius: 20px;
+  border: 1px solid #21262d;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+
+.callHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: #161b22;
+  border-bottom: 1px solid #21262d;
+}
+
+.callPartnerInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.callPartnerName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.callTimer {
+  font-size: 0.85rem;
+  color: #3fb950;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Video Area */
+.videoArea {
+  flex: 1;
+  position: relative;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remoteVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Audio only placeholder */
+.audioPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #8b949e;
+}
+
+.audioAvatarLg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #6366f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.audioName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.audioStatus {
+  font-size: 0.9rem;
+  color: #3fb950;
+}
+
+/* Local video (picture-in-picture) */
+.localVideo {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 150px;
+  height: 110px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #30363d;
+  background: #161b22;
+  cursor: move;
+  z-index: 10;
+}
+
+.noVideoLabel {
+  color: #8b949e;
+  font-size: 0.85rem;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 150px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #161b22;
+  border: 2px solid #30363d;
+  border-radius: 10px;
+}
+
+/* Controls */
+.callControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background: #161b22;
+  border-top: 1px solid #21262d;
+}
+
+.ctrlBtn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, transform 0.1s;
+  background: #21262d;
+  color: #e6edf3;
+}
+.ctrlBtn:hover { background: #30363d; transform: scale(1.05); }
+.ctrlBtnActive { background: #6366f1; color: white; }
+.ctrlBtnActive:hover { background: #4f46e5; }
+
+.ctrlBtnEnd {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f85149;
+  color: white;
+  transition: background 0.15s, transform 0.1s;
+}
+.ctrlBtnEnd:hover { background: #da3633; transform: scale(1.05); }
+
+/* Connecting state */
+.connectingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #8b949e;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #30363d;
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.avatarMd {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #6366f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+  50% { box-shadow: 0 0 0 14px rgba(99, 102, 241, 0); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
