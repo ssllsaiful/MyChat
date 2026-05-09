@@ -122,7 +122,7 @@ export default function ChatPage() {
 
     // WebSocket
     if (socketRef.current) socketRef.current.close();
-    const ws = new WebSocket(`ws://10.10.13.53:8000/ws/chat/${activeConv.id}/`);
+    const ws = new WebSocket(`${process.env.NEXT_PUBLIC_WS_URL}/ws/chat/${activeConv.id}/`);
     ws.onmessage = (e) => {
       const data = JSON.parse(e.data);
       setMessages(prev => [...prev, {
