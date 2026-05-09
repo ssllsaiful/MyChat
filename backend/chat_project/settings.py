@@ -44,6 +44,11 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', 'http://localhost:3000').split(',')
 CORS_ALLOW_CREDENTIALS = True
 
+CSRF_TRUSTED_ORIGINS = os.environ.get(
+    'CSRF_TRUSTED_ORIGINS', 
+    'https://mychat-production-2b73.up.railway.app'
+).split(',')
+
 ROOT_URLCONF = 'chat_project.urls'
 
 TEMPLATES = [
